@@ -108,3 +108,19 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+spring:
+  profiles:
+    active: prod
+  datasource:
+    url: jdbc:mysql://local-mysql-headless.local-mysql.svc.cluster.local:3306/api_server?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf-8
+    username:
+      valueFrom:
+        secretKeyRef:
+          name: db-secret
+          key: username
+    password:
+      valueFrom:
+        secretKeyRef:
+          name: db-secret
+          key: password
