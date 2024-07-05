@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-server-config
+data:
+  SPRING_APPLICATION_JSON: |
+    {
+      "spring": {
+        "profiles": {
+          "active": "prod"
+        },
+        "datasource": {
+          "url": "jdbc:mysql://local-mysql-headless.local-mysql.svc.cluster.local:3306/api_server?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf-8",
+          "username": "${DB_USERNAME}",
+          "password": "${DB_PASSWORD}"
+        }
+      }
+    }
