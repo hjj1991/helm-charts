@@ -78,7 +78,7 @@ livenessProbe:
   httpGet:
     path: /livez
     port: http
-  initialDelaySeconds: 150
+  initialDelaySeconds: 240
   timeoutSeconds: 5
   periodSeconds: 10
   failureThreshold: 6
@@ -86,7 +86,7 @@ readinessProbe:
   httpGet:
     path: /readyz
     port: http
-  initialDelaySeconds: 150
+  initialDelaySeconds: 240
   timeoutSeconds: 5
   periodSeconds: 10
   failureThreshold: 6
