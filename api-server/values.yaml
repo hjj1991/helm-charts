@@ -74,14 +74,14 @@ resources:
      cpu: 500m
      memory: 1000Mi
 
-livenessProbe:
-  httpGet:
-    path: /livez
-    port: http
-readinessProbe:
-  httpGet:
-    path: /readyz
-    port: http
+#livenessProbe:
+#  httpGet:
+#    path: /livez
+#    port: http
+#readinessProbe:
+#  httpGet:
+#    path: /readyz
+#    port: http
 
 autoscaling:
   enabled: true
