@@ -110,3 +110,10 @@ tolerations: []
 affinity: {}
 
 envConfigMap: api-server-config
+
+batchJob:
+  enabled: true
+  image: hjj1991/spring-batch-investment:0.0.1
+  command: ["java", "-jar", "/app.jar"]
+  envConfigMap: api-server-config
+  cronSchedule: "15 * * * *"  # CronJob의 스케줄링 설정, 매일 자정에 실행

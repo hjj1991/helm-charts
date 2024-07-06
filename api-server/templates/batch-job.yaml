@@ -1,0 +1,40 @@
+{{- if .Values.batchJob.enabled }}
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "api-server.fullname" . }}-batch-job
+  labels:
+    {{- include "api-server.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.batchJob.cronSchedule | default "0 0 * * *" }}  # Cron 표현식으로 주기적인 작업 스케줄링
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: spring-batch-job
+              image: {{ .Values.batchJob.image }}
+              command: {{ toJson .Values.batchJob.command }}
+              env:
+                - name: SPRING_APPLICATION_JSON
+                  valueFrom:
+                    configMapKeyRef:
+                      name: {{ .Values.batchJob.envConfigMap }}
+                      key: SPRING_BATCH_APPLICATION_JSON
+                - name: SECRET_USERNAME
+                  valueFrom:
+                    secretKeyRef:
+                      name: db-secret
+                      key: username
+                - name: SECRET_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: db-secret
+                      key: password
+                - name: FSS_AUTH_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: common-secret
+                      key: fss_auth_key
+          restartPolicy: Never  # 작업 실패 시 재시도
+{{- end }}
