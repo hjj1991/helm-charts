@@ -13,7 +13,7 @@ spec:
         spec:
           containers:
             - name: spring-batch-job
-              image: {{ .Values.batchJob.image }}
+              image: {{ .Values.batchJob.image.repository }}:{{ .Values.batchJob.image.tag }}
               command: {{ toJson .Values.batchJob.command }}
               env:
                 - name: SPRING_APPLICATION_JSON
