@@ -24,7 +24,7 @@ data:
           "job": {
             "name": "FINANCIAL_COMPANY_SYNC_JOB"
           }
-        }
+        },
         "datasource": {
           "url": "jdbc:mysql://local-mysql-headless.local-mysql.svc.cluster.local:3306/api_server?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf-8"
         }
