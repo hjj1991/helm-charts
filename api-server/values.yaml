@@ -8,7 +8,7 @@ image:
   repository: hjj1991/sundry-ninja
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 1.0.12
+  tag: 1.0.14
 
 imagePullSecrets:
   - name: my-registry-secret
@@ -124,7 +124,7 @@ batchJob:
   image:
     repository: hjj1991/spring-batch-investment
     pullPolicy: IfNotPresent
-    tag: 0.0.5
+    tag: 0.0.6
   command: ["java", "-jar", "/app.jar"]
   envConfigMap: api-server-config
   cronSchedule: "0 22 * * *"  # CronJob의 스케줄링 설정, 매일 아침 7시 KST 실행
