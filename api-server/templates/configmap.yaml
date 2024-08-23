@@ -9,6 +9,11 @@ data:
         "profiles": {
           "active": "prod"
         },
+          "data": {
+            "redis": {
+              "host": "redis-master.default.svc.cluster.local",
+              "port": 6379
+          },
         "datasource": {
           "url": "jdbc:mysql://mysql-headless.default.svc.cluster.local:3306/api-server?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf-8"
         }
