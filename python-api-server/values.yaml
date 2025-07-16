@@ -75,20 +75,20 @@ resources:
 
 livenessProbe:
   httpGet:
-    path: /healthz # <-- ADJUST THIS to your actual health check endpoint
+    path: /livez
     port: http
-  initialDelaySeconds: 60
+  initialDelaySeconds: 240
   timeoutSeconds: 5
   periodSeconds: 10
-  failureThreshold: 3
+  failureThreshold: 6
 readinessProbe:
   httpGet:
-    path: /readyz # <-- ADJUST THIS to your actual readiness check endpoint
+    path: /readyz
     port: http
-  initialDelaySeconds: 60
+  initialDelaySeconds: 240
   timeoutSeconds: 5
   periodSeconds: 10
-  failureThreshold: 3
+  failureThreshold: 6
 
 autoscaling:
   enabled: false
