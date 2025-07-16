@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: your-python-api-image-repository # <-- CHANGE THIS
+  repository: hjj1991/sundry-ninja # <-- CHANGE THIS
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
@@ -50,8 +50,9 @@ ingress:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.io/backend-protocol: "HTTP"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
   hosts:
-    - host: python-api.local # <-- CHANGE THIS
+    - host: python-api.sundry.ninja # <-- CHANGE THIS
       paths:
         - path: /
           pathType: Prefix
@@ -115,4 +116,4 @@ tolerations: []
 
 affinity: {}
 
-envConfigMap: python-api-server-config # <-- CHANGE THIS if you have a configmap
+#envConfigMap: python-api-server-config # <-- CHANGE THIS if you have a configmap
