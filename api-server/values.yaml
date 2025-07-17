@@ -111,7 +111,8 @@ volumeMounts: []
 #   mountPath: "/etc/foo"
 #   readOnly: true
 
-nodeSelector: {}
+nodeSelector:
+  kubernetes.io/hostname: control-2
 
 tolerations: []
 
