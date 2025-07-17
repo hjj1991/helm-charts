@@ -20,7 +20,7 @@ data:
           }
         },
         "datasource": {
-          "url": "jdbc:mysql://mysql-headless.default.svc.cluster.local:3306/api-server?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf-8"
+          "url": "jdbc:mysql://mysql.mysql.svc.cluster.local:3306/api-server?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf-8"
         }
       }
     }
@@ -36,7 +36,7 @@ data:
           }
         },
         "datasource": {
-          "url": "jdbc:mysql://mysql-headless.default.svc.cluster.local:3306/api-server?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf-8"
+          "url": "jdbc:mysql://mysql.mysql.svc.cluster.local:3306/api-server?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf-8"
         }
       }
     }
