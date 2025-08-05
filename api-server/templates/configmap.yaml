@@ -21,6 +21,9 @@ data:
         },
         "datasource": {
           "url": "jdbc:mysql://mysql-headless.mysql.svc.cluster.local:3306/api-server?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf-8"
+        },
+        "elasticsearch": {
+          "uris": "http://elasticsearch-master.default.svc.cluster.local:9200"
         }
       }
     }
