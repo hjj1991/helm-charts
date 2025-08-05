@@ -41,5 +41,10 @@ spec:
                     secretKeyRef:
                       name: common-secret
                       key: gemini_auth_key
+                - name: ES_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: common-secret
+                      key: es_password
           restartPolicy: Never  # 작업 실패 시 재시도
 {{- end }}

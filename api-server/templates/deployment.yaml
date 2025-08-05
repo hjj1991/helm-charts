@@ -56,6 +56,16 @@ spec:
                 secretKeyRef:
                   name: db-secret
                   key: password
+            - name: GEMINI_AUTH_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: common-secret
+                  key: gemini_auth_key
+            - name: ES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: common-secret
+                  key: es_password
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
