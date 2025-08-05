@@ -36,5 +36,10 @@ spec:
                     secretKeyRef:
                       name: common-secret
                       key: fss_auth_key
+                - name: GEMINI_AUTH_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: common-secret
+                      key: gemini_auth_key
           restartPolicy: Never  # 작업 실패 시 재시도
 {{- end }}
