@@ -68,16 +68,16 @@ resources:
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
    limits:
      cpu: 500m
-     memory: 512Mi
+     memory: 1024Mi
    requests:
-     cpu: 200m
-     memory: 256Mi
+     cpu: 400m
+     memory: 512Mi
 
 livenessProbe:
   httpGet:
     path: /livez
     port: http
-  initialDelaySeconds: 240
+  initialDelaySeconds: 600
   timeoutSeconds: 5
   periodSeconds: 10
   failureThreshold: 6
@@ -85,7 +85,7 @@ readinessProbe:
   httpGet:
     path: /readyz
     port: http
-  initialDelaySeconds: 240
+  initialDelaySeconds: 600
   timeoutSeconds: 5
   periodSeconds: 10
   failureThreshold: 6
